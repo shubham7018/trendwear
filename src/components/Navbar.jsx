@@ -149,7 +149,7 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {visible && (
-                <div className='fixed inset-0 bg-black/50 z-50 animate-fadeIn'>
+                <div className='fixed inset-0 bg-black/50 z-50 animate-fadeIn h-screen'>
                     <div className='w-[80%] h-full bg-white p-6 animate-slideIn'>
                         <div className='flex justify-between items-center mb-8'>
                             <img src={assets.logo} className='w-[100px]' alt="Trendwear Logo" />
