@@ -6,20 +6,24 @@ import axios from 'axios';
 const NewsletterBox = () => {
     const [email, setEmail] = useState('');
     const { backendUrl } = useContext(ShopContext);
-
     const onSubmitHandler = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post(backendUrl + '/api/subscription/subscribe', { email });
+            // const response = await axios.post(backendUrl + '/api/subscription/subscribe', { email });
+            const response = await axios.post(backendUrl + '/sendemail', { email });
             if (response.data.success) {
                 toast.success(response.data.message);
+                console.log(response.data)
                 setEmail('');
             } else {
                 toast.error(response.data.message);
+                console.log(response)
             }
         } catch (error) {
             toast.error(error.response?.data?.message || 'Something went wrong');
         }
+
+        
     };
 
     return (
